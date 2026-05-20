@@ -76,7 +76,7 @@ class _LibraryPageState extends State<LibraryPage> {
                   Icon(
                     Icons.video_library_outlined,
                     size: 72,
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -198,10 +198,10 @@ class _LibraryPageState extends State<LibraryPage> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: theme.primaryColor.withOpacity(0.12),
+                          color: theme.primaryColor.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: theme.primaryColor.withOpacity(0.3),
+                            color: theme.primaryColor.withValues(alpha: 0.3),
                             width: 1,
                           ),
                         ),

@@ -84,14 +84,14 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: 120,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: theme.primaryColor.withOpacity(0.12),
+                    color: theme.primaryColor.withValues(alpha: 0.12),
                     border: Border.all(
                       color: theme.primaryColor,
                       width: 3.0,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: theme.primaryColor.withOpacity(0.3),
+                        color: theme.primaryColor.withValues(alpha: 0.3),
                         blurRadius: 16,
                         spreadRadius: 2,
                       )
@@ -166,7 +166,7 @@ class _ProfilePageState extends State<ProfilePage> {
         Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: accentColor.withOpacity(0.12),
+            color: accentColor.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(icon, color: accentColor, size: 22),

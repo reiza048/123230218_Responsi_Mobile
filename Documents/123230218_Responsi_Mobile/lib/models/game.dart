@@ -22,10 +22,14 @@ class Game {
   });
 
   factory Game.fromJson(Map<String, dynamic> json) {
+    String originalThumbnail = json['thumbnail'] ?? '';
+    if (originalThumbnail.contains('freetogame.com') && !originalThumbnail.contains('images.weserv.nl')) {
+      originalThumbnail = 'https://images.weserv.nl/?url=${Uri.encodeComponent(originalThumbnail)}';
+    }
     return Game(
       id: json['id'] ?? 0,
       title: json['title'] ?? '',
-      thumbnail: json['thumbnail'] ?? '',
+      thumbnail: originalThumbnail,
       shortDescription: json['short_description'] ?? '',
       genre: json['genre'] ?? '',
       platform: json['platform'] ?? '',

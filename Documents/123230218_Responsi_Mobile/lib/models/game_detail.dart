@@ -5,9 +5,13 @@ class GameScreenshot {
   GameScreenshot({required this.id, required this.image});
 
   factory GameScreenshot.fromJson(Map<String, dynamic> json) {
+    String originalImage = json['image'] ?? '';
+    if (originalImage.contains('freetogame.com') && !originalImage.contains('images.weserv.nl')) {
+      originalImage = 'https://images.weserv.nl/?url=${Uri.encodeComponent(originalImage)}';
+    }
     return GameScreenshot(
       id: json['id'] ?? 0,
-      image: json['image'] ?? '',
+      image: originalImage,
     );
   }
 
@@ -49,6 +53,10 @@ class GameDetail {
   });
 
   factory GameDetail.fromJson(Map<String, dynamic> json) {
+    String originalThumbnail = json['thumbnail'] ?? '';
+    if (originalThumbnail.contains('freetogame.com') && !originalThumbnail.contains('images.weserv.nl')) {
+      originalThumbnail = 'https://images.weserv.nl/?url=${Uri.encodeComponent(originalThumbnail)}';
+    }
     var screenshotsList = json['screenshots'] as List? ?? [];
     List<GameScreenshot> screenshotsObj = screenshotsList
         .map((screenshotJson) => GameScreenshot.fromJson(screenshotJson))
@@ -57,7 +65,7 @@ class GameDetail {
     return GameDetail(
       id: json['id'] ?? 0,
       title: json['title'] ?? '',
-      thumbnail: json['thumbnail'] ?? '',
+      thumbnail: originalThumbnail,
       status: json['status'] ?? '',
       shortDescription: json['short_description'] ?? '',
       description: json['description'] ?? '',

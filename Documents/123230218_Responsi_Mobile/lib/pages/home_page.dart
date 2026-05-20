@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                                   Icon(
                                     Icons.sports_esports_outlined,
                                     size: 72,
-                                    color: Colors.grey.withOpacity(0.5),
+                                    color: Colors.grey.withValues(alpha: 0.5),
                                   ),
                                   const SizedBox(height: 16),
                                   const Text(
@@ -251,10 +251,10 @@ class _HomePageState extends State<HomePage> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: theme.primaryColor.withOpacity(0.15),
+                          color: theme.primaryColor.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: theme.primaryColor.withOpacity(0.3),
+                            color: theme.primaryColor.withValues(alpha: 0.3),
                             width: 1,
                           ),
                         ),
@@ -275,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(right: 12.0),
                 child: Icon(
                   Icons.chevron_right,
-                  color: Colors.grey.withOpacity(0.6),
+                  color: Colors.grey.withValues(alpha: 0.6),
                 ),
               ),
             ],
